@@ -4,7 +4,7 @@ const PubSub = require(`@google-cloud/pubsub`);
 // Creates a client
 const pubsub = new PubSub({
 	projectId: 'myiotproject-202021',	
-	keyFilename: '../credentials/MyIOTProject-4ac957d71f96.json'
+	keyFilename: './credentials/MyIOTProject-4ac957d71f96.json'
 	});
 
 /**
@@ -21,8 +21,11 @@ let messageCount = 0;
 const messageHandler = message => {
   console.log(`Received message ${message.id}:`);
   console.log(`\tData: ${message.data}`);
-  console.log(`\tAttributes: ${message.attributes}`);
+  attributes = message.attributes;
+  console.log(`\tFrom Device: ${message.attributes.deviceId}`);
+  console.log(attributes);
   messageCount += 1;
+
 
   // "Ack" (acknowledge receipt of) the message
   message.ack();
