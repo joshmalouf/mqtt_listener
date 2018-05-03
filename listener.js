@@ -4,7 +4,7 @@ const PubSub = require(`@google-cloud/pubsub`);
 // Creates a client
 const pubsub = new PubSub({
 	projectId: 'myiotproject-202021',	
-	keyFilename: './MyIOTProject-4ac957d71f96.json'
+	keyFilename: '../credentials/MyIOTProject-4ac957d71f96.json'
 	});
 
 /**
