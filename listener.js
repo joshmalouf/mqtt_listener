@@ -18,12 +18,16 @@ const subscription = pubsub.subscription(subscriptionName);
 
 // Create an event handler to handle messages
 let messageCount = 0;
+
+
 const messageHandler = message => {
-  console.log(`Received message ${message.id}:`);
-  console.log(`\tData: ${message.data}`);
-  attributes = message.attributes;
-  console.log(`\tFrom Device: ${message.attributes.deviceId}`);
-  console.log(attributes);
+  console.log(`Received message: ${message.id},\tFrom Device: ${message.attributes.deviceId}`);
+
+  const data = JSON.parse(message.data);
+  console.log(`\ttimestamp:${data.timeStamp}`);
+  console.log(`\tdatapoint1:${data.datapoint1}`);
+  //attributes = message.attributes;
+  //console.log(attributes);
   messageCount += 1;
 
 
