@@ -4,13 +4,13 @@ const PubSub = require(`@google-cloud/pubsub`);
 // Creates a client
 const pubsub = new PubSub({
 	projectId: 'myiotproject-202021',	
-	keyFilename: './credentials/MyIOTProject-4ac957d71f96.json'
-	});
+	keyFilename: './credentials/key.json'
+	});  
 
 /**
  * TODO(developer): Uncomment the following lines to run the sample.
  */
-const subscriptionName = 'mountainberry-sub';
+const subscriptionName = 'LAPTOP';
 const timeout = 300;
 
 // References an existing subscription
